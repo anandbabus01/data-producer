@@ -4,6 +4,10 @@ This Kafka producer reads from huge json files given in yelp data set and writin
 
 Producer is not parallel processing, it linear process, once one file pushed , it will go next file and push to kafka brokers
 
+If kafka not listening to localhost:9092, please update kafka server ip address in Producer.java
+line#53
+configProperties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+
 before run this, create kafka topics using script, run this script in $KAFKA_HOME:
 create-kafka-topics.sh
 
@@ -14,6 +18,8 @@ use below script to run this script:
 
 java -cp com.producer-1.0-SNAPSHOT-jar-with-dependencies.jar Driver < unzipped yelp dataset directory path >
 
-- after one hour, we will be able to run Spark Streaming Consumer
+Note:
+Producer is not parallel processing, it linear process, once one file pushed , it will go next file and push to kafka brokers
+after one hour, we will be able to run Spark Streaming Consumer
 
 
