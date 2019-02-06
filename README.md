@@ -25,4 +25,7 @@ after one hour, we will be able to run Spark Streaming Consumer
 I advise to create smaller files of each json to test this code faster like below example:
 head -10000 business.json > new-dir/business.json
 
+this jars can be dockerized easy way by these steps:
+https://runnable.com/docker/java/dockerize-your-java-application
+
 
